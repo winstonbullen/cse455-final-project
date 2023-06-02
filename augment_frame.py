@@ -1,6 +1,6 @@
 import cv2 as cv
 import numpy as np
-from remove_bg import overlay_two_image_v2
+from transparent_overlay import overlay_two_image_v2
 
 CORNER_IDS = (1, 3, 2, 0)
 CACHED_REF_PTS = None

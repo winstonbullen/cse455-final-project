@@ -14,4 +14,6 @@ This repository has three Python files that all separate a layer of abstraction.
 
 - `augment_frame.py`: augments the input frame onto the webcam frame where tags are detected
 
+- `transparent_overlay`: overlays the input frame onto the webcam frame with a transparent background
+
 Run `python jurassic_park.py` to run the entire system. 
