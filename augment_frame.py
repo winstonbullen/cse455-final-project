@@ -1,5 +1,6 @@
 import cv2 as cv
 import numpy as np
+from remove_bg import overlay_two_image_v2
 
 CORNER_IDS = (1, 3, 2, 0)
 CACHED_REF_PTS = None
@@ -50,16 +51,17 @@ def draw_over_corners(source_frame, webcam_frame, source_corners, webcam_corners
     webcam_height, webcam_width = webcam_frame.shape[:2]
     warped_frame = cv.warpPerspective(source_frame, homography, (webcam_width, webcam_height))
 
-    mask = np.zeros((webcam_height, webcam_width), dtype=np.uint8)
-    cv.fillConvexPoly(mask, np.int32([webcam_corners]), (255, 255, 255), cv.LINE_AA)
+    # mask = np.zeros((webcam_height, webcam_width), dtype=np.uint8)
+    # cv.fillConvexPoly(mask, np.int32([webcam_corners]), (255, 255, 255), cv.LINE_AA)
 
-    mask_scaled = mask.copy() / 255.0
-    mask_scaled = np.dstack([mask_scaled] * 3)
+    # mask_scaled = mask.copy() / 255.0
+    # mask_scaled = np.dstack([mask_scaled] * 3)
 
-    warped_multiplied = cv.multiply(warped_frame.astype(float), mask_scaled)
-    image_multiplied = cv.multiply(webcam_frame.astype(float), 1.0 - mask_scaled)
-    augmented_frame = cv.add(warped_multiplied, image_multiplied)
-    augmented_frame = augmented_frame.astype(np.uint8)
+    # warped_multiplied = cv.multiply(warped_frame.astype(float), mask_scaled)
+    # image_multiplied = cv.multiply(webcam_frame.astype(float), 1.0 - mask_scaled)
+    # augmented_frame = cv.add(warped_multiplied, image_multiplied)
+    # augmented_frame = augmented_frame.astype(np.uint8)
+    augmented_frame = overlay_two_image_v2(webcam_frame, warped_frame)
 
     return augmented_frame
 
