@@ -2,7 +2,7 @@ import random
 from augment_video import run_augment_video
 
 DINO_DIR = './dinos/'
-NUM_DINOS = 1
+NUM_DINOS = 5
 
 def pick_random_dino():
     dino_index = random.randint(1, NUM_DINOS)
