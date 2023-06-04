@@ -9,7 +9,7 @@ def run_augment_video(source):
     source_buffer = deque(maxlen=128)
     source_buffer.appendleft(source_frame)
 
-    webcam_feed = cv.VideoCapture(0)
+    webcam_feed = cv.VideoCapture(1, cv.CAP_DSHOW)
     while len(source_buffer) > 0:
         _, webcam_frame = webcam_feed.read()
         augmented_frame = run_augment_frame(source_frame, webcam_frame)

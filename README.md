@@ -8,7 +8,7 @@ Have you ever looked at a chicken and wondered - what if this delicious animal w
 
 This repository has three Python files that all separate a layer of abstraction.
 
-- `jurassic_park.py`: picks a random video from the `dinos/` folder to show on the webcam feed
+- `jurassic_campus.py`: picks a random video from the `dinos/` folder to show on the webcam feed
 
 - `augment_video.py`: starts the webcam and input file video streams to get frames to augment
 
