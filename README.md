@@ -12,7 +12,7 @@ The non-technical setup instructions include printing the specific ArUco tags an
 
 - The recommended dinosaur videos can be found [here](https://drive.google.com/drive/u/1/folders/1s04W4yC9aMDRX1DZCRmgnEE9NPL-GhlU). Download and place them in the `dinos/` directory in this repository after cloning it.
 
-The technical setup instructions only require the installation of a few libraries. They assume you have [Python](https://www.python.org/downloads/) downloaded and configured on your system as well as [pip](https://pypi.org/project/pip/). Please note that these commands may look different depending on your machine.
+The technical setup instructions only require the installation of a few libraries. They assume you have [Python](https://www.python.org/downloads/) and [pip](https://pypi.org/project/pip/) downloaded and configured on your system. Please note that these commands may look different depending on your machine.
 
 ```shell
 pip install opencv-python
@@ -30,6 +30,6 @@ This repository has four Python files that all separate a layer of abstraction.
 
 - `augment_frame.py` augments the input frame onto the webcam frame where tags are detected
 
-- `transparent_overlay` overlays the input frame onto the webcam frame with a transparent background
+- `transparent_overlay.py` overlays the input frame onto the webcam frame with a transparent background
 
 Run `python jurassic_park.py` to run the entire system. 
