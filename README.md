@@ -32,4 +32,4 @@ This repository has four Python files that all separate a layer of abstraction.
 
 - `transparent_overlay.py` overlays the input frame onto the webcam frame with a transparent background
 
-Run `python jurassic_park.py` to run the entire system. 
+Run `python jurassic_campus.py` to run the entire system. 
